@@ -14,14 +14,11 @@ import reducers from './reducers';
 
 import './scss/base/base.scss'
 
-const axiosInstance = axios.create({
-  baseURL: '/api',
-});
 
 const store = createStore(
   reducers,
   {},
-  applyMiddleware(thunk.withExtraArgument(axiosInstance)),
+  applyMiddleware(thunk),
 );
 
 ReactDOM.render(

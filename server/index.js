@@ -10,10 +10,12 @@ import Routes from '../src/Routes';
 import renderer from '../src/helpers/renderer';
 import createStore from '../src/helpers/createStore';
 import env from './env';
+import data from '../src/product.json'
 
 const webpackConfig = require('../webpack.client');
 const webpackCompiler = webpack(webpackConfig);
 const app = express();
+const path = require('path');
 
 if (process.env.NODE_ENV === 'development') {
   app.use(webpackMiddleware(webpackCompiler));
@@ -30,10 +32,14 @@ app.use(
   })
 );
 
+app.get('/getproducts', function (req, res) {
+  res.json(data);
+})
+
 app.use(express.static('dist'));
 
 app.get('*', (req, res) => {
-  res.send('dist/index.html')
+  res.sendFile(path.resolve('../wsi/src/index.html'))
 });
 
 app.listen(3000, () => {
