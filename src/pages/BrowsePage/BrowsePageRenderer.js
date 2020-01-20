@@ -4,6 +4,7 @@ import { getProducts } from '../../actions';
 import ProductThumbnail from '../../components/ProductThumbnail/ProductThumbnail';
 import './BrowsePage.scss';
 import BreadCrumb from '../../components/BeardCrumb/BreadCrumb';
+import Carosuel from '../../components/Carosuel/Carosuel';
 
 class BrowsePageRenderer extends Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class BrowsePageRenderer extends Component {
         <div className="row product-thumnail-container">
           {this.props.productsList ? this.props.productsList.map((item) => { return (<ProductThumbnail product={item} />) }) : <img src="../../ajax-loader.jpg"></img>}
         </div>
+        <Carosuel />
       </React.Fragment>
     );
   }

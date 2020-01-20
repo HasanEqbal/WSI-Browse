@@ -7,7 +7,7 @@ class BrowsePage extends Component {
   render() {
     return (
       <div className="row product-thumnail-container">
-        {this.props.productsList ? this.props.productsList.map((item) => { return (<ProductThumbnail product={item} />) }) : console.log('error')}
+        {this.props.productsList ? this.props.productsList.map((item) => { return (<ProductThumbnail product={item} />) }) : <img src="../../ajax-loader.jpg"></img>}
       </div>
     );
   }
