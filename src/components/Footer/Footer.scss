@@ -1,0 +1,36 @@
+.footerContainer{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h4{
+   color: #a5a5a5;
+   margin: 20px;
+   font-size: 12px;
+}
+
+.moviesByGenre  li {
+   color: #7f7f7f;
+   font-size: 12px;
+   line-height: 16px;
+   font-weight: 400;
+}
+.moviesByGenre{
+  list-style-type: none;
+  margin-left: 0.0rem
+}
+
+.footerContainer .col-sm {
+   flex-basis: auto;
+   flex-grow: 1;
+   width: 22%;
+   max-width: 100%;
+}
+
+.footer-epilogue{
+  color: #7f7f7f;
+   font-size: 10px;
+   line-height: 16px;
+   font-weight: 400;
+   text-align: center;
+}

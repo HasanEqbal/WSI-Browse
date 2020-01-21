@@ -50,7 +50,6 @@ const config = {
       test: /\.(png|jpeg|jpg|svg)$/,
       loader: 'url-loader',
       options: {
-        limit: 10000,
         name: "images/[hash].[ext]"
       }
     },
@@ -70,7 +69,8 @@ const config = {
         name: "fonts/[hash].[ext]"
       }
     }
-  ]},
+    ]
+  },
 
   resolve: {
     extensions: ['*', '.js', '.jsx']
@@ -97,4 +97,4 @@ const config = {
   devtool: process.env.NODE_ENV === 'development' ? 'eval-source-map' : false
 };
 
-module.exports =  config;
+module.exports = config;

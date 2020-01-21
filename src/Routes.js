@@ -20,7 +20,7 @@ export default [
       },
       {
         ...BrowsePageRenderer,
-        path: '/browse'
+        path: '/shop/cookware/newall'
       },
       {
         ...NotFoundPage
