@@ -12,6 +12,10 @@ const config = {
 
   mode: 'development',
 
+  node: {
+    __dirname: false
+  },
+
   entry: './server/index.js',
 
   output: {

@@ -1,15 +1,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import express from 'express';
-import { matchRoutes } from 'react-router-config';
 import proxy from 'express-http-proxy';
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import Routes from '../src/Routes';
-import renderer from '../src/helpers/renderer';
-import createStore from '../src/helpers/createStore';
-import env from './env';
 import data from '../src/product.json'
 
 const webpackConfig = require('../webpack.client');
@@ -18,7 +13,9 @@ const app = express();
 const path = require('path');
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(webpackMiddleware(webpackCompiler));
+  app.use(webpackMiddleware(webpackCompiler, {
+    index: false
+  }));
   app.use(webpackHotMiddleware(webpackCompiler));
 }
 
@@ -39,7 +36,9 @@ app.get('/getproducts', function (req, res) {
 app.use(express.static('dist'));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve('../wsi/src/index.html'))
+  res.sendFile('index.html', {
+    root: path.join(__dirname, '../../src')
+  })
 });
 
 app.listen(3000, () => {
