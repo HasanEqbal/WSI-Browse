@@ -216,8 +216,9 @@
 .sub:hover,
 .trigger:hover .sub {
   max-height: 500px;
-  opacity: 1;
+  opacity: 0.33;
   transition-delay: 0s;
+  z-index: 1;
 }
 
 .sub:hover{

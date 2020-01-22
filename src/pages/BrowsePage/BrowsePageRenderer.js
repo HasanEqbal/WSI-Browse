@@ -13,13 +13,13 @@ class BrowsePageRenderer extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="browse-page">
         <BreadCrumb />
-        <div className="row product-thumnail-container">
+        <div className="row product-thumbnail-container">
           {this.props.productsList ? this.props.productsList.map((item) => { return (<ProductThumbnail product={item} />) }) : <img src="../../ajax-loader.jpg"></img>}
         </div>
         <Carosuel />
-      </React.Fragment>
+      </div>
     );
   }
 }
