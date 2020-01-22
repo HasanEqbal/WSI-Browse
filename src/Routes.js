@@ -10,7 +10,7 @@ export default [
     ...App,
     routes: [
       {
-        ...HomePage,
+        ...BrowsePageRenderer,
         path: '/',
         exact: true
       },

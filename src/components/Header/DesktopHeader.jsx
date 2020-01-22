@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import logo from '../../Images/logo.png';
+/* import logo from '../../Images/logo.png'; */
 
 export default function DesktopHeader() {
     return (
@@ -28,7 +28,7 @@ export default function DesktopHeader() {
                 <div class="row align-justify align-middle">
                     <div class="shrink column">
                         <ul class="vertical medium-horizontal menu">
-                            <li><a href="#"><img class="logo" src={logo} /></a></li>
+                            <li><a href="#"><img class="logo" src="" /></a></li>
                             <li class="main-nav-link trigger"><a href="/shop/cookware/newall">COOKWARE</a>
                                 <div class="sub">
                                     <div class="item">
