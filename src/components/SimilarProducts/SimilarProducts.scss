@@ -1,0 +1,18 @@
+.expanded {
+  margin-top: 10px !important;
+}
+
+.similar-product-details {
+  display: flex;
+}
+
+.product-description {
+  flex: 1;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.similar-product-details p {
+  height: 6rem;
+}

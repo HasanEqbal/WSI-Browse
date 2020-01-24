@@ -1,27 +1,28 @@
 import React from 'react';
 import App from './App';
-import HomePage from './pages/HomePage';
 import BrowsePageRenderer from './pages/BrowsePage/BrowsePageRenderer';
 import NotFoundPage from './pages/NotFoundPage';
-import AdminsListPage from './pages/AdminsListPage';
+import ProductDetailsRenderer from './components/ProductDetails/ProductDetailsRenderer';
 
 export default [
   {
     ...App,
     routes: [
       {
-        ...BrowsePageRenderer,
+        component: BrowsePageRenderer,
         path: '/',
         exact: true
       },
       {
-        ...AdminsListPage,
-        path: '/admins'
+        component: ProductDetailsRenderer,
+        path: '/shop/:id',
+        exact: true
       },
       {
         ...BrowsePageRenderer,
         path: '/shop/cookware/newall'
       },
+
       {
         ...NotFoundPage
       }

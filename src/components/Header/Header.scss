@@ -65,9 +65,9 @@
 
 .ecommerce-header-top {
   width: 100%;
-  background-color: darken($dark-gray,20%);
+  background-color: darken($dark-green,10%);
   height: 40px;
-  padding: 8px 20px 10px 20px;
+  padding: 0 20px;
 
   .fa {
     color: $white;
@@ -83,10 +83,13 @@
 .ecommerce-header-top-links {
   color: lighten($dark-gray, 100%);
 
+  ul {
+    margin: auto;
+  }
+
   ul li {
-    display: inline;
+    display: inline-block;
     padding-left: 20px;
-    padding-bottom: 5px;
   }
 
   a {
@@ -198,6 +201,8 @@
   white-space: nowrap;
   font-weight: 300;
   color: $dark-silver;
+  z-index: 2;
+  background-color: #fff;
   font-size: 14px;
   border: solid 1px $medium-gray;
 
@@ -216,13 +221,13 @@
 .sub:hover,
 .trigger:hover .sub {
   max-height: 500px;
-  opacity: 0.33;
+  opacity: 2;
   transition-delay: 0s;
-  z-index: 1;
 }
 
 .sub:hover{
   transition-delay: 0s;
+  z-index: 1;
 }
 
 .item:not(:last-child) {

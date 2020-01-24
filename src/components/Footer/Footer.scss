@@ -9,18 +9,18 @@ h4{
    font-size: 12px;
 }
 
-.moviesByGenre  li {
+.footer-columns  li {
    color: #7f7f7f;
    font-size: 12px;
    line-height: 16px;
    font-weight: 400;
 }
-.moviesByGenre{
+.footer-columns{
   list-style-type: none;
   margin-left: 0.0rem
 }
 
-.footerContainer .col-sm {
+.footer-columns .col-sm {
    flex-basis: auto;
    flex-grow: 1;
    width: 22%;
@@ -33,4 +33,12 @@ h4{
    line-height: 16px;
    font-weight: 400;
    text-align: center;
+}
+
+.footer{
+  background-color: #f0f0f0;
+}
+
+.column-header{
+  color: #082a4c;
 }

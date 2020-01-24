@@ -5,9 +5,9 @@ import Carosuel from '../Carosuel/Carosuel';
 
 export default function Overlay(props) {
 
-  let mainImage = props.product.hero.href;
 
-  let alternativeImages = props.product.images;
+  let alternativeImages = props.images;
+  console.log(alternativeImages)
 
   return (
     <div>
@@ -17,9 +17,7 @@ export default function Overlay(props) {
             {alternativeImages ?
               alternativeImages.map((alternativeImage, index) => {
                 return (
-
                   <Carosuel index={index} alternativeimage={alternativeImage.href} />
-
                 )
               }) :
               <AlertInfo />}

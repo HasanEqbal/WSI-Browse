@@ -12,6 +12,9 @@ const webpackCompiler = webpack(webpackConfig);
 const app = express();
 const path = require('path');
 
+
+console.log('Hell')
+
 if (process.env.NODE_ENV === 'development') {
   app.use(webpackMiddleware(webpackCompiler, {
     index: false

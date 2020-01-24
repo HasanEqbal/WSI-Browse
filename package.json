@@ -5,13 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server-dist/server-bundle.js",
-
     "dev": "NODE_ENV=development node shim.js && npm-run-all -p dev:build:server dev:run:server",
-
     "dev:run:server": "nodemon --watch dist/server --exec \"node dist/server/server-bundle.js\"",
     "dev:build:server": "NODE_ENV=development webpack --mode development --watch --config webpack.server.js",
-
-
     "dev:build:client": "NODE_ENV=development webpack --mode development --config webpack.client.js",
     "prod": "node shim.js && npm-run-all -s prod:build:server prod:build:client prod:server",
     "prod:server": "node server-dist/server-bundle.js",

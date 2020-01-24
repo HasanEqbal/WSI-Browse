@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { lifecycle, compose } from 'recompose';
 import { getProducts } from '../../actions';
-import ProductThumbnail from '../../components/ProductThumbnail/ProductThumbnail';
-import './BrowsePage.scss';
-import BreadCrumb from '../../components/BeardCrumb/BreadCrumb';
-import Carosuel from '../../components/Carosuel/Carosuel';
-import BrowsePage from './BrowsePage';
+import ProductDetailsPage from './ProductDetailsPage';
 
 
 const mapStateToProps = (state) => {
   return { productsList: state.productsList };
 };
 
+const getImageClickedImageDeatils = (e) => {
+  console.log(e.target)
+}
 const reduxConnector = connect(mapStateToProps, { getProducts });
 
 const lifecycleHandlers = lifecycle({
@@ -24,5 +22,4 @@ const lifecycleHandlers = lifecycle({
 export default compose(
   reduxConnector,
   lifecycleHandlers,
-)(BrowsePage);
-
+)(ProductDetailsPage);

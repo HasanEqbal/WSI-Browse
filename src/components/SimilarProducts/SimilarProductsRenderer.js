@@ -1,12 +1,7 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { lifecycle, compose } from 'recompose';
 import { getProducts } from '../../actions';
-import ProductThumbnail from '../../components/ProductThumbnail/ProductThumbnail';
-import './BrowsePage.scss';
-import BreadCrumb from '../../components/BeardCrumb/BreadCrumb';
-import Carosuel from '../../components/Carosuel/Carosuel';
-import BrowsePage from './BrowsePage';
+import SimilarProducts from './SimilarProducts';
 
 
 const mapStateToProps = (state) => {
@@ -24,5 +19,4 @@ const lifecycleHandlers = lifecycle({
 export default compose(
   reduxConnector,
   lifecycleHandlers,
-)(BrowsePage);
-
+)(SimilarProducts);
