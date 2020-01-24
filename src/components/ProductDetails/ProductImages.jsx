@@ -3,7 +3,7 @@ import './ProductImages.scss';
 import Overlay from '../Overlay/Overlay'
 
 export default function ProductsImages({ product }) {
-    const [mainImage, setMainImage] = useState(product[0].hero)
+    const [mainImage, setMainImage] = useState(product[0].hero.href)
     const [displayCarosuel, setDisplayCarosuel] = useState(false)
     let { images } = product[0]
     return (
