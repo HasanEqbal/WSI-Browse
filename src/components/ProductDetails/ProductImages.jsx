@@ -9,9 +9,7 @@ export default function ProductsImages({ product }) {
     return (
         <React.Fragment>
             {<div className="medium-6 columns">
-                <a>
-                    <img className="thumbnail" onClick={() => { setDisplayCarosuel(true) }} src={mainImage} />
-                </a>
+                <a data-open="exampleModal8" onClick={() => { setDisplayCarosuel(true) }}><img className="thumbnail" src={mainImage} alt={name} /></a>
                 <div className="row small-up-8">
                     {images ? images.map((image, index) => {
                         return (<div key={index} className="column">

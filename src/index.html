@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>WSI</title>
   <link href="main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
 </head>
 
 <body>
@@ -16,6 +17,10 @@
   <script src="bundle.js"></script>
   <script>
     $(document).foundation();
+
+    $(document).on('opened', '[data-reveal]', function () {
+      $(window).trigger('resize');
+    });
   </script>
 </body>
 

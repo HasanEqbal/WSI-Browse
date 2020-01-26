@@ -1,14 +1,12 @@
 import React from 'react';
 import './Carosuel.scss';
 
-export default function Carosuel(props) {
-    let { alternativeimage, index } = props
-    console.log(alternativeimage, index)
+export default function Carosuel() {
+
     return (
         <React.Fragment>
-            <div id={`slide-${index+1}`}>
-                <img src={alternativeimage} />
-            </div>
+            <div class="slideshow-container">
+          </div>
         </React.Fragment>
     )
 }

@@ -32,7 +32,6 @@ export default function ProductThumbnail({ product }) {
           <span className="product-card-sale-price">Sale Price: ${salePrice}</span>
         </div>
       </div>
-      {modalShow && <Overlay product={product} />}
     </React.Fragment >
   )
 

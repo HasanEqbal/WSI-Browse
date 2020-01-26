@@ -1,31 +1,27 @@
 import React from 'react';
-import AlternativeImages from '../AlternativeImages/AlternativeImages';
-import AlertInfo from '../AlertInfo/AlertInfo';
-import Carosuel from '../Carosuel/Carosuel';
+import { Link } from "react-router-dom"
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
+import './Overlay.scss'
+import SlideShow from '../SlideShow/SlideShow'
 
 export default function Overlay(props) {
 
-
+  console.log(props)
   let alternativeImages = props.images;
-  console.log(alternativeImages)
+
 
   return (
-    <div>
-      <div className="reveal overlay-container" id="exampleModal1" data-reveal>
-        <div class="slider">
-          <div class="slides">
-            {alternativeImages ?
-              alternativeImages.map((alternativeImage, index) => {
-                return (
-                  <Carosuel index={index} alternativeimage={alternativeImage.href} />
-                )
-              }) :
-              <AlertInfo />}
-          </div>
-        </div>
-      </div>
+    <div className="reveal large overlay" id="settings-modal" data-reveal data-overlay>
+      <AwesomeSlider cssModule={AwesomeSliderStyles}>
+        {alternativeImages.map((image, index) => {
+          return <div key={index} data-src={image.href} />
+        })}
+      </AwesomeSlider>
+      <Link href="#" class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </Link>
     </div>
   )
-
 }
 
