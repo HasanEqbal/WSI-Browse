@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
-import logo from '../../Images/dummy.jpeg';
 
 export default function DesktopHeader() {
     return (
         <React.Fragment>
             <div className="off-canvas-content" data-off-canvas-content>
                 <div className="ecommerce-header-top show-for-large">
-                    <div className="row align-justify align-middle" style={{height: '100%'}}>
+                    <div className="row align-justify align-middle" style={{ height: '100%' }}>
                         <div className="ecommerce-header-top-message">
                             <strong>Everyday Low Price. Free Shipping. Free Returns. Free Design Advice</strong>
                         </div>
@@ -28,68 +28,67 @@ export default function DesktopHeader() {
                 <div className="row align-justify align-middle">
                     <div className="shrink column">
                         <ul className="vertical medium-horizontal menu">
-                            <li><a href="#"><img className="logo" src={logo} /></a></li>
                             <li className="main-nav-link trigger"><a href="/shop/cookware/newall">COOKWARE</a>
                                 <div className="sub">
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Cookware Sets</a>
+                                        <Link to="/shop/cookware/newall">Cookware Sets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Fry Pans & Skillets</a>
+                                        <Link to="/shop/cookware/newall">Fry Pans & Skillets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">All-Clad</a>
+                                        <Link to="/shop/cookware/newall">All-Clad</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Global</a>
+                                        <Link to="/shop/cookware/newall">Global</Link>
                                     </div>
                                 </div>
                             </li>
                             <li className="main-nav-link trigger"><a href="/shop/cookware/newall">ELETRICS</a>
                                 <div className="sub">
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Cookware Sets</a>
+                                        <Link to="/shop/cookware/newall">Cookware Sets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Fry Pans & Skillets</a>
+                                        <Link to="/shop/cookware/newall">Fry Pans & Skillets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">All-Clad</a>
+                                        <Link to="/shop/cookware/newall">All-Clad</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Global</a>
+                                        <Link to="/shop/cookware/newall">Global</Link>
                                     </div>
                                 </div>
                             </li>
                             <li className="main-nav-link trigger"><a href="build.html">OUTDOOR</a>
                                 <div className="sub">
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Cookware Sets</a>
+                                        <Link to="/shop/cookware/newall">Cookware Sets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Fry Pans & Skillets</a>
+                                        <Link to="/shop/cookware/newall">Fry Pans & Skillets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">All-Clad</a>
+                                        <Link to="/shop/cookware/newall">All-Clad</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Global</a>
+                                        <Link to="/shop/cookware/newall">Global</Link>
                                     </div>
                                 </div>
                             </li>
                             <li className="main-nav-link trigger"><a href="/shop/cookware/newall">CUTLERY</a>
                                 <div className="sub">
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Cookware Sets</a>
+                                        <Link to="/shop/cookware/newall">Cookware Sets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Fry Pans & Skillets</a>
+                                        <Link to="/shop/cookware/newall">Fry Pans & Skillets</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">All-Clad</a>
+                                        <Link to="/shop/cookware/newall">All-Clad</Link>
                                     </div>
                                     <div className="item">
-                                        <a href="/shop/cookware/newall">Global</a>
+                                        <Link to="/shop/cookware/newall">Global</Link>
                                     </div>
                                 </div>
                             </li>
@@ -103,8 +102,6 @@ export default function DesktopHeader() {
                     </div>
                 </div>
             </div>
-
-
             <div className="ecommerce-header-mobile hide-for-large">
                 <div className="ecommerce-header-mobile-left">
                     <button className="menu-icon" type="button" data-toggle="ecommerce-header"></button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Parser from 'html-react-parser';
 
 export default function ProductDetails({ product }) {
     let productdeatils = product[0]
@@ -13,9 +14,13 @@ export default function ProductDetails({ product }) {
 
     return (
         <div className="medium-6 large-5 columns">
-            <h3>{name}</h3>
-            <span className="product-card-old-price">Original Price: ${price}</span>
-            <span className="product-card-sale-price">Sale Price: ${salePrice}</span>
+            <h3>{Parser(name)}</h3>
+            <div>
+                <span className="product-card-old-price">Original Price: ${price}</span>
+            </div>
+            <div>
+                <span className="product-card-sale-price">Sale Price: ${salePrice}</span>
+            </div>
             <p>Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque
               faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in.
      </p>

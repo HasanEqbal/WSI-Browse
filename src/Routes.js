@@ -1,4 +1,3 @@
-import React from 'react';
 import App from './App';
 import BrowsePageRenderer from './pages/BrowsePage/BrowsePageRenderer';
 import NotFoundPage from './pages/NotFoundPage';
@@ -18,11 +17,6 @@ export default [
         path: '/shop/:id',
         exact: true
       },
-      {
-        ...BrowsePageRenderer,
-        path: '/shop/cookware/newall'
-      },
-
       {
         ...NotFoundPage
       }

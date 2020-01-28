@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.0",
     "foundation-sites": "^6.5.3",
+    "html-react-parser": "^0.10.0",
     "is-object": "^1.0.1",
     "nodemon": "^1.19.4",
     "prop-types": "^15.7.2",

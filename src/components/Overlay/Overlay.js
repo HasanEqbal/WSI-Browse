@@ -1,27 +1,19 @@
 import React from 'react';
-import { Link } from "react-router-dom"
 import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
-import './Overlay.scss'
-import SlideShow from '../SlideShow/SlideShow'
+import './Overlay.scss';
 
-export default function Overlay(props) {
-
-  console.log(props)
-  let alternativeImages = props.images;
-
-
+export default function Overlay({ images, closeoverlay }) {
   return (
-    <div className="reveal large overlay" id="settings-modal" data-reveal data-overlay>
+    <div className="overlay">
       <AwesomeSlider cssModule={AwesomeSliderStyles}>
-        {alternativeImages.map((image, index) => {
+        {images.map((image, index) => {
           return <div key={index} data-src={image.href} />
         })}
       </AwesomeSlider>
-      <Link href="#" class="close-button" data-close aria-label="Close modal" type="button">
+      <button class="close-button" data-close aria-label="Close modal" type="button" onClick={closeoverlay}>
         <span aria-hidden="true">&times;</span>
-      </Link>
+      </button>
     </div>
   )
 }
-

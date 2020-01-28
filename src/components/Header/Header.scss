@@ -1,7 +1,7 @@
 @import '../../scss/base/settings';
 
 .ecommerce-header {
-  width: 100%;
+  width: 78%;
   background-color: $white;
 
   .logo {
@@ -49,7 +49,7 @@
     width: 39px;
     height: 39px;
     background-size: 20px 20px;
-    background-image: url("https://placehold.it/20x20");
+    background-image: url("../../Images/search-icon.png");
     background-repeat: no-repeat;
     background-position: center center;
     padding-left: 0;
@@ -78,6 +78,7 @@
 .ecommerce-header-top-message {
   color: lighten($dark-gray, 100%);
   float: left;
+  margin-left: 25px;
 }
 
 .ecommerce-header-top-links {
@@ -85,6 +86,7 @@
 
   ul {
     margin: auto;
+    margin-left: 225px;
   }
 
   ul li {
@@ -235,5 +237,14 @@
 }
 .item:last-child {
   padding: 10px;
+}
+
+.shrink{
+  flex: 1;
+}
+
+.ecommerce-header .row {
+  flex-flow: row;
+  width: 82%;
 }
 

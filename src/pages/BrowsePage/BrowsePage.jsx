@@ -2,7 +2,6 @@ import React from 'react';
 import BreadCrumb from '../../components/BeardCrumb/BreadCrumb';
 import ProductThumbnail from '../../components/ProductThumbnail/ProductThumbnail';
 import './BrowsePage.scss';
-import ProductDetails from '../../components/ProductDetails/ProductDetails';
 
 function BrowsePage({ productsList }) {
   let { groups, name } = productsList;

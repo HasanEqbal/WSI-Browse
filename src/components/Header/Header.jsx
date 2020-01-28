@@ -3,13 +3,11 @@ import { isMobile } from 'react-device-detect';
 import MobileHeader from './MobileHeader';
 import DesktopHeader from './DesktopHeader';
 
-
 const Header = () => {
-
   return (
-    <React.Fragment>
+    <div>
       {isMobile ? <MobileHeader /> : <DesktopHeader />}
-    </React.Fragment>
+    </div>
   );
 };
 

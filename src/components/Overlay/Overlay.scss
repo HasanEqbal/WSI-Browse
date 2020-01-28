@@ -1,3 +1,4 @@
+@import '../../../src/scss/base/settings';
 
 .product-image-gallery {
   background-color: #fefefe;
@@ -29,19 +30,46 @@
 }
 .overlay{
   position: fixed;
-  left: 50%;
-  width: 550px;
-  height: 550px;
-  margin-left: -150px;
-  margin-top: -100px;
+  width: 40%;
+  height: 40%;
+  margin-left: 18%;
   background-color: #f1c40f;
   text-align: center;
 
 
   z-index: 10;
   outline: 9999px solid rgba(0,0,0,0.5);
+
 }
 
 .awssld {
   --slider-height-percentage: 90% !important;
+  --control-bullet-color: #1468a0 !important;
+  --control-bullet-active-color: #1468a0 !important;
+}
+
+.close-button{
+  display:flex;
+  justify-content:flex-end;
+  width:100%;
+  padding:0;
+}
+
+@media only screen and (max-width: 600px) {
+  .overlay{
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  background-color: #f1c40f;
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 2%;
+  }
+
+  .awssld {
+    --slider-height-percentage: 90% !important;
+    --control-bullet-color: #1468a0 !important;
+    --control-bullet-active-color: #1468a0 !important;
+  }
+
 }

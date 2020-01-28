@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import './Footer.scss';
-import footerData from './footer_data.json'
-import FooterColumns from './FooterColumns'
+import footerData from './footer_data.json';
+import FooterColumns from './FooterColumns';
 
 function Footer() {
 
@@ -19,7 +19,7 @@ function Footer() {
                 }
                 )}
             </div>
-            <div className="footer-epilogue">© 2020 Williams-Sonoma Inc., All Rights Reserved</div>
+            <div className="footer-epilogue">© 2020 Nisum-Technologies Inc., All Rights Reserved</div>
         </div>
     )
 }

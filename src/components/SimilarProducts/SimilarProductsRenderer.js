@@ -3,7 +3,6 @@ import { lifecycle, compose } from 'recompose';
 import { getProducts } from '../../actions';
 import SimilarProducts from './SimilarProducts';
 
-
 const mapStateToProps = (state) => {
   return { productsList: state.productsList };
 };
