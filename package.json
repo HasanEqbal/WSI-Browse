@@ -12,18 +12,23 @@
     "prod": "node shim.js && npm-run-all -s prod:build:server prod:build:client prod:server",
     "prod:server": "node server-dist/server-bundle.js",
     "prod:build:server": "NODE_ENV=production webpack --mode production --config webpack.server.js",
-    "prod:build:client": "NODE_ENV=production webpack --mode production --config webpack.client.js"
+    "prod:build:client": "NODE_ENV=production webpack --mode production --config webpack.client.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "axios-mock-adapter": "^1.17.0",
     "core-js": "^3.3.6",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.0",
     "foundation-sites": "^6.5.3",
     "html-react-parser": "^0.10.0",
     "is-object": "^1.0.1",
+    "jest": "^25.1.0",
+    "moxios": "^0.4.0",
     "nodemon": "^1.19.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -38,10 +43,17 @@
     "react-router-dom": "^5.1.2",
     "recompose": "^0.30.0",
     "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "regenerator": "^0.14.2",
     "regenerator-runtime": "^0.13.3",
     "serialize-javascript": "^2.1.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "moduleNameMapper": {
+      "\\.(css|scss|png)$": "<rootDir>/__test__/setup/styleMock.js"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
@@ -53,6 +65,8 @@
     "concurrently": "^5.0.0",
     "css-loader": "^3.4.2",
     "dotenv-webpack": "^1.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-loader": "^3.0.2",

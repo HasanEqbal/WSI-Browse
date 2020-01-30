@@ -1,7 +1,7 @@
 import React from 'react';
-import './BreadCrumb.scss';
+import './BreadCrumb.scss'
 
-export default function BreadCrumb({ categoryname }) {
+function BreadCrumb({ categoryname }) {
   return (
     <div className="breadcrumb-container">
       <ul className="breadcrumbs grid-x grid-padding-x large-up-3">
@@ -15,3 +15,5 @@ export default function BreadCrumb({ categoryname }) {
     </div>
   )
 }
+
+export default BreadCrumb;

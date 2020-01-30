@@ -8,13 +8,13 @@ export default [
     ...App,
     routes: [
       {
-        component: BrowsePageRenderer,
-        path: '/',
+        component: ProductDetailsRenderer,
+        path: '/shop/:id',
         exact: true
       },
       {
-        component: ProductDetailsRenderer,
-        path: '/shop/:id',
+        component: BrowsePageRenderer,
+        path: '/',
         exact: true
       },
       {

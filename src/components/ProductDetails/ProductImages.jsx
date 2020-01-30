@@ -4,9 +4,9 @@ import Overlay from '../Overlay/Overlay';
 import AlertInfo from '../../helpers/AlertInfo/AlertInfo'
 
 export default function ProductsImages({ product }) {
-    const [mainImage, setMainImage] = useState(product[0].hero.href)
+    const [mainImage, setMainImage] = useState(product.hero.href)
     const [displayCarosuel, setDisplayCarosuel] = useState(false)
-    let { images } = product[0]
+    let { images } = product
 
     const closeOverLay = () => {
         setDisplayCarosuel(false)
@@ -25,7 +25,7 @@ export default function ProductsImages({ product }) {
                                 <img className="thumbnail" src={image.href} onClick={(e) => { setMainImage(e.target.src) }} />
                             </a>
                         </div>)
-                    }) : <AlertInfo message="Ohh, Alternative images are not available for this product."/>}
+                    }) : <AlertInfo message="Ohh, Alternative images are not available for this product." />}
                 </div>
             </div>}
             {displayCarosuel && <Overlay closeoverlay={closeOverLay} images={images} />}
