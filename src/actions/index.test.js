@@ -14,15 +14,14 @@ mock.onGet('http://localhost:3000/getproducts').reply(200, {
   }
 });
 
-
 const store = mockStore({});
 
-describe('Testing getProducts()', () => {
+describe('Testing getProducts() service', () => {
   beforeEach(() => {
     store.clearActions();
   });
-  it('should get GET_PRODUCTS', async () => {
 
+  it('should get GET_PRODUCTS', async () => {
     await store.dispatch(getProducts()).then(() => {
       let expectedActions = [{
         type: GET_PRODUCTS,
@@ -37,8 +36,5 @@ describe('Testing getProducts()', () => {
       }]
       expect(store.getActions()).toEqual(expectedActions);
     });
-
-    //console.log(store.getActions())
-
   });
 })

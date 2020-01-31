@@ -12,7 +12,7 @@ function BrowsePage({ productsList }) {
       <div className="grid-x grid-padding-x small-up-1 medium-up-3 large-up-3">
         {groups ? groups.map((item, index) => {
           return (<ProductThumbnail key={index} product={item} />)
-        }) : <img className="loding-indicator" src={loadingIndicator}></img>}
+        }) : <img className="loading-indicator" src={loadingIndicator}></img>}
       </div>
     </React.Fragment>
   );

@@ -2,35 +2,53 @@ import React from 'react';
 import Parser from 'html-react-parser';
 
 export default function ProductDetails({ product }) {
-    let productdeatils = product
-    let { name } = productdeatils
 
-    let regularPrice, originalPriceRangeLow, originalPriceRangeHigh, salePriceRangeHigh, salePriceRangeLow, salePrice;
+    const {
+        name,
+        price,
+        priceRange,
+    } = product;
 
-    if (productdeatils.priceRange.regular) {
-        originalPriceRangeHigh = productdeatils.priceRange.regular.high;
-        originalPriceRangeLow = productdeatils.priceRange.regular.low
-    } else if (productdeatils.price) {
-        regularPrice = productdeatils.price.regular
-    } else if (productdeatils.priceRange.selling) {
-        salePriceRangeHigh = productdeatils.priceRange.selling.high;
-        salePriceRangeLow = productdeatils.priceRange.selling.low
-    } else {
-        salePrice = productdeatils.price.selling
+    let regularHigh
+    let regularLow
+    let sellingHigh
+    let sellingLow
+
+    if (priceRange) {
+        if (priceRange.regular) {
+            regularHigh = priceRange.regular.high;
+            regularLow = priceRange.regular.low;
+        }
+
+        if (priceRange.selling) {
+            sellingHigh = priceRange.selling.high;
+            sellingLow = priceRange.selling.low;
+        }
     }
+
+    let regularPrice
+    let sellingPrice
+
+    if (price) {
+        regularPrice = price.regular
+        if (price.selling) {
+            sellingPrice = price.selling
+        }
+    }
+
 
     return (
         <div className="medium-6 large-5 columns">
-            <h3>{Parser(name)}</h3>
+            <h3 className="product-title">{Parser(name)}</h3>
             <div>
-                {originalPriceRangeHigh ?
-                    <span className="product-card-old-price">Original Price: ${originalPriceRangeLow}-${originalPriceRangeHigh}</span>
+                {regularHigh ?
+                    <span className="product-card-old-price">Original Price: ${regularLow}-${regularHigh}</span>
                     : regularPrice ?
-                        <span className="product-card-old-price">Original Price: ${regularPrice}</span> : ""
+                        <span className="product-card-regular-price">Original Price: ${regularPrice}</span> : ""
                 }
             </div>
             <div>
-                <span className="product-card-sale-price">Sale Price: ${salePriceRangeHigh ? `${salePriceRangeLow} - $${salePriceRangeHigh}` : salePrice}</span>
+                <span className="product-card-sale-price">Sale Price: ${sellingHigh ? `${sellingLow} - $${sellingHigh}` : sellingPrice}</span>
             </div>
             <p>Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque
               faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in.

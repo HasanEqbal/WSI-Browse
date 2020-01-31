@@ -4,20 +4,39 @@ import { Link } from 'react-router-dom';
 import './ProductThumbnail.scss';
 
 export default function ProductThumbnail({ product }) {
-  let { name, id } = product;
-  let regularPrice, originalPriceRangeLow, originalPriceRangeHigh, salePriceRangeHigh, salePriceRangeLow, salePrice;
-  if (product.priceRange.regular) {
-    originalPriceRangeHigh = product.priceRange.regular.high;
-    originalPriceRangeLow = product.priceRange.regular.low
-  } else if (product.price) {
-    regularPrice = product.price.regular
-  } else if (product.priceRange.selling) {
-    salePriceRangeHigh = product.priceRange.selling.high;
-    salePriceRangeLow = product.priceRange.selling.low
-  } else {
-    salePrice = product.price.selling
+  const {
+    name,
+    id,
+    price,
+    priceRange,
+  } = product;
+
+  let regularHigh
+  let regularLow
+  let sellingHigh
+  let sellingLow
+
+  if (priceRange) {
+    if (priceRange.regular) {
+      regularHigh = priceRange.regular.high;
+      regularLow = priceRange.regular.low;
+    }
+
+    if (priceRange.selling) {
+      sellingHigh = priceRange.selling.high;
+      sellingLow = priceRange.selling.low;
+    }
   }
 
+  let regularPrice
+  let sellingPrice
+
+  if (price) {
+    regularPrice = price.regular
+    if (price.selling) {
+      sellingPrice = price.selling
+    }
+  }
 
   let image = product.thumbnail.href;
 
@@ -26,19 +45,28 @@ export default function ProductThumbnail({ product }) {
       <div className="cell thumbnail">
         <div className="product-card" >
           <div className="product-card-thumbnail">
-            <Link to={`/shop/${id}`}><img src={image} alt={name} /></Link>
+            <Link className="product-main-image" to={`/shop/${id}`}><img src={image} alt={name} /></Link>
           </div>
           <h6 className="product-card-title">
-            <Link to={`/shop/${id}`}>{Parser(name)}</Link></h6>
+            <Link className="product-name"to={`/shop/${id}`}>{Parser(name)}</Link></h6>
           <div>
-            {originalPriceRangeHigh ?
-              <span className="product-card-old-price">Original Price: ${originalPriceRangeLow}-${originalPriceRangeHigh}</span>
+            {regularHigh ?
+              <span className="product-card-old-price">
+                Original Price: ${regularLow}-${regularHigh}
+              </span>
               : regularPrice ?
-                <span className="product-card-regular-price">Original Price: ${regularPrice}</span> : ""
+                <span className="product-card-regular-price">
+                  Original Price: ${regularPrice}
+                </span> : ""
             }
           </div>
           <div>
-            <span className="product-card-sale-price">Sale Price: ${salePriceRangeHigh ? `${salePriceRangeLow} - $${salePriceRangeHigh}` : salePrice}</span>
+            <span className="product-card-sale-price">
+              Sale Price: ${sellingHigh
+                ? `${sellingLow} - $${sellingHigh}`
+                : sellingPrice
+              }
+            </span>
           </div>
         </div>
       </div>

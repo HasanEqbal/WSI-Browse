@@ -16,7 +16,7 @@ export default function ProductDetailsPage({ productsList, match }) {
                         </div>
                         <SimilarProductRenderer />
                     </React.Fragment>)
-            }) : <img className="loding-indicator" src={loadingIndicator}></img>}
+            }) : <img className="loading-indicator" src={loadingIndicator}></img>}
         </React.Fragment>
     )
 }
